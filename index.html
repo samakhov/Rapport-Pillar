@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pharo Book</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+<link href="Rapport-Pillar/_support/html/css/font-awesome.min.css" rel="stylesheet">
+<link href="Rapport-Pillar/_support/html/css/nucleus.css" rel="stylesheet">
+<link href="Rapport-Pillar/_support/html/css/flex.css" rel="stylesheet">
+<link rel="stylesheet" href="Rapport-Pillar/_support/html/highlightjs/styles/default.css">
+<link rel="stylesheet" href="Rapport-Pillar/_support/html/css/highlight-commands.css">
+<link rel="stylesheet" href="Rapport-Pillar/_support/html/css/bootstrap.min.css">
+<script src="Rapport-Pillar/_support/html/js/jquery-2.x.min.js"></script>
+<script src="Rapport-Pillar/_support/html/highlightjs/highlight.pack.js"></script>
+<script src="Rapport-Pillar/_support/html/js/highlight-commands.js"></script>
+<meta name="description" content="">
+<meta name="author" content="Biyalou-Sama Asbathou">
+  </head>
+  <body>
+    <header>
+  <div class="logo">
+    <a class="baselink" href="Rapport-Pillar">Pharo Book</a>
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+  
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+   		<li data-nav-id="123" class="dd-item">
+    		<a href="Rapport-Pillar">
+		       <i class="fa fa-fw fa-home"></i>
+	    	</a>
+        </li>
+
+		
+		  <li class="dd-item  haschildren ">
+			<div>
+			  <a href="Rapport-Pillar/index.html#introduction">
+					Introduction
+			  </a>
+			   <i class="fa fa-angle-right fa-lg category-icon"></i> 
+			</div>
+			  <ul class="dd-item">
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="Rapport-Pillar/Chapters/Chapter1/chapter1.html#compilation">
+							Compilation
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="Rapport-Pillar/Chapters/Chapter2/chapter2.html#edition and templates">
+							Edition and Templates
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+			  </ul>
+		  
+		  </li>
+		
+    </ul>
+  </aside>
+
+  <section class="page">
+    
+	<h1>Amélioration des processus de génération de documents avec l'outil Pillar</h1>
+		
+	<h1>Introduction</h1>
+
+<p>
+Généralement en informatique, la répétition est considérée comme une chose à éviter. Dans la plupart des tâches quotidiennes allant de l’écriture de code à la rédaction de rapports, de livres, ou d’articles, on évite le plus possible de se répéter. En effet il arrive souvent qu’on ait besoin d’avoir un article ou rapport sous différents formats mais ayant toujours le même contenu. Dans ces cas, il est toujours souhaitable d’avoir un outil permettant de rédiger un document unique et de pouvoir l’exporter dans divers formats. Ne pas se répéter tout en gardant un aperçu visuel agréable, adapté est donc important. C’est dans ce cadre que l’outil «Pillar» a été proposé par la communauté «Pharo». Pillar permet de rédiger des livres, des articles, de la documentation de code dans une syntaxe assez souple et de pouvoir les avoir sous les formats PDF, HTML, epub. Cet outil a vraiment permis à divers acteurs d’avoir un article au format PDF mais aussi directement consultable sur un site sous forme de pages HTML. Au niveau du format PDF, le passage par latex permettait d’avoir un rendu appropié, standard. Par contre les documents HTML générés jusqu’alors n’offraient pas un aperçu très adapté pour le web. Ainsi, il fallait améliorer les pages HTML proposées nativement dans Pillar. Il s’agissait entre autres d’avoir un menu représentant la table des matières du document afin de pouvoir naviguer aisément dans le document. Le travail s’est donc articulé autour de comment améliorer le processus pour qu’il prenne en compte les différents changements dont la table des matières. D’autres types de dysfonctionnement existants déjà ont dû être également corrigés afin d’offrir un outil plus stable. J’ai ainsi mis en place un processus de déploiement automatique des documents sur le web, amélioré le système de gestion de templates mustache et les erreurs à déclencher.
+La communauté Pharo est une communauté libre très active. Elle est toujours à la recherche de meilleures solutions pour les développeurs en général. L’équipe projet RMoD d’Inria, qui supporte le langage Pharo, se sert de celui ci pour travailler sur l’évolution des applications orientées objet, sur le devenir de ces applications. Passionné de l’environnement orienté objet et de tout ce qui est open source, j’ai donc voulu être au contact d’une équipe dynamique œuvrant pour l’évolution de l’orienté objet. Ceci afin d’en apprendre un peu plus et de  compléter mes connaissances théoriques.
+</p>
+
+<h2>Compilation</h2>
+
+<p>
+
+<figure>
+	<img src="Chapters/Chapter1/figures/pillar.png" width="30%" alt="Pillar logo"/>
+	<figcaption>Pillar logo</figcaption>
+</figure>
+Welcome to Pillar's little user-guide !!
+</p>
+<p>
+To write a book, you can create chapters and include them into <em>book.pillar</em> (see the <em>book.pillar</em> file)
+or directly edit the file.
+If you don't know <em>Pillar</em>, check its documentation at <a href="http://github.com/pillar-markup/pillar">http://github.com/pillar-markup/pillar</a>.
+</p>
+<h2>Edition and Templates</h2>
+
+<p>
+There is also a template system, you can find template in the folder <em>_support/template</em>.
+Some template are already written, but if you want to have your own, you had two solutions:
+</p><ul>
+<li>edit the existing template related to the format you want to change (recommanded)</li>
+<li>create your own template with its own name</li>
+</ul>
+
+<p>
+You will found some template examples in <em>_support/template</em> folder to see how it works.
+The default template system is <em>Mustache</em>.
+</p>
+<p>
+Output directory's default name is <em>book-result</em> but you can change it in the pillar.conf file by editing the
+<code>OUTPUTDIRECTORY</code> variable
+</p>
+
+<p>
+
+<figure>
+	<img src="Chapters/Chapter2/figures/pharo.png" width="30%" alt="Chapters/Chapter2/figures/pharo.png"/>
+	<figcaption></figcaption>
+</figure>
+
+<figure>
+	<img src="Chapters/Chapter2/figures/rmod.png" width="30%" alt="Chapters/Chapter2/figures/rmod.png"/>
+	<figcaption></figcaption>
+</figure>
+</p>
+
+
+
+  </section>
+
+</article>
+
+<footer>
+
+<div class="footline">
+    <div class="github-link">
+      <a href="" target="blank"><i class="fa fa-code-fork"></i>Github</a>
+    </div>
+  </div>
+</footer>
+
+<script src="Rapport-Pillar/_support/html/js/clipboard.min.js"></script>
+
+<link href="Rapport-Pillar/_support/html/css/featherlight.min.css" rel="stylesheet">
+<script src="Rapport-Pillar/_support/html/js/featherlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="Rapport-Pillar/_support/html/js/flex.js"></script>
+<!-- Prettify annotated paragraphs-->
+    <script src="Rapport-Pillar_support/html/js/annotated-paragraphs.js"></script>
+
+  </body>
+</html>
