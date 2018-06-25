@@ -4,8 +4,8 @@ Généralement en informatique, la répétition est considérée comme une chose
 La communauté Pharo est une communauté libre très active. Elle est toujours à la recherche de meilleures solutions pour les développeurs en général. L’équipe projet RMoD d’Inria, qui supporte le langage Pharo, se sert de celui ci pour travailler sur l’évolution des applications orientées objet, sur le devenir de ces applications. Passionné de l’environnement orienté objet et de tout ce qui est open source, j’ai donc voulu être au contact d’une équipe dynamique œuvrant pour l’évolution de l’orienté objet. Ceci afin d’en apprendre un peu plus et de  compléter mes connaissances théoriques.
 
 
-${inputFile:path=Chapters/Chapter1/chapter1.pillar}$
+${inputFile:path=Chapters/contexte.pillar}$
 
-${inputFile:path=Chapters/Chapter2/chapter2.pillar}$
+${inputFile:path=Chapters/contribution.pillar}$
 
 

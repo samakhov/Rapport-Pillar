@@ -1,0 +1,48 @@
+!Contexte
+
+Je vais ici présenter le cadre dans lequel notre stage s’est effectué. En effet notre stage s’est effectué dans un des centres de recherche de l’institut Inria. Il s’agira de présenter l’institut sur le plan national. Je vais ensuite présenter le centre de Lille au sein duquel j’ai effectué  mon stage. Et enfin l’équipe projet RMoD dans laquelle j’ai travaillé.
+
+!!Présentation générale
+L’Institut National en Informatique et en Automatique (INRIA) est un institut de recherche français crée le 3 janvier 1967 sous le nom d’IRIA Institut de Recherche en Informatique et en Automatique. Les domaines de recherche autour desquels portent les projets des équipes d’Inria:
+-Mathématiques appliquées, calcul et simulation;
+-Algorithmique, programmation, logiciels et architectures;
+-Réseaux, systèmes et services, calcul distribué;
+-Perception, Cognition, Interaction;
+-Santé, biologie et planète numériques.
+
+Inria est composé de plusieurs centres de recherche autonomes sur l’étendue du territoire dont : Bordeaux - Sud-Ouest, Grenoble – Rhône-Alpes, Lille - Nord Europe, Nancy - Grand Est, Paris – Rocquencourt siège de l’institut, Rennes - Bretagne Atlantique, Saclay – Île-de-France, Sophia Antipolis – Méditerranée. Inria présente encore une administration  décentralisée, tout en voulant garder une mutualisation des services pour tous les centres pour  une meilleure gestion administrative.
+
+L’institut a divers partenariats avec plusieurs universités françaises Paris Saclay, Paris Diderot, Lille ... et des écoles. Il a également des partenariats avec d’autres laboratoires nationaux.
+
+!!Centre Inria Lille - Nord Europe
+Le centre de recherche Inria de Lille a été inauguré en 2008. Il est situé à Villeneuve d’Ascq au parc Scientifique Haute-Borne. Il s’est donc installé dans un environnement hautement technologique. Il y a en effet le campus scientifique de l’université de Lille juste à côté.
+La directrice du centre depuis le 1er mars 2017 est Isabelle Herlin. Le centre est composé de services administratifs et d’entités de recherche. On peut distinguer donc certains services administratifs dont :
+
+-SRH: Service des Ressources Humaines
+-SMGRH: Service de Management et Gestion des Ressources Humaines
+-SAER: Service des Assistantes d’Equipes de Recherche
+
+La recherche dans le centre se fait au moyen d’entités qualifiées d’équipes-projets. Le centre Inria de Lille compte 16 équipes-projets dont certaines sont délocalisées. C’est le cas de l’équipe Bonsai situé dans les locaux du laboratoire Cristal (Centre de recherche en Informatique et Signal Automatique ) de l’Université de Lille. Le centre présente ainsi divers partenariats avec les institutions de la métropole de Lille dont notamment l’Université de Lille - Sciences et Technologies et le laboratoire Cristal.
+
+
+!!Equipe-projet RMoD
+Notre stage s’est déroulé au sein de l’équipe RMoD. Elle est située  au troisième (3ème) étage du bâtiment B d’Inria. Il s’agit d’une équipe-projet d’Inria ayant pour activité «Analyses et construction de langage pour l’évolution d’applications orientées objet». Elle est dirigée par Stéphane Ducasse, directeur de recherche à Inria. L’équipe est constituée de membres permanents, d’ingénieurs de recherche et de doctorants. L’équipe travaille donc principallement sur l’évolution des applications orientées objet et sur la réingenierie d’applications.
+Elle se sert pour cela d’un langage purement objet, dynamique et réfléxif «Pharo» dont elle a activement participé à la mise en place. Pharo a pour ancêtre Smalltalk. Il s’agit en fait d’une implémentation de SmallTalk, un des tous premiers langages orienté objet.  Ainsi une partie  de l’équipe travaille sur l’évolution du langage, des concepts orientés objet, de l’environnement et outils autour du langage.
+
+L’autre partie fait de l’analyse de code pour sortir des métriques, faire des visualisations, tests et du métamodeling sur les systèmes informatiques de diverses sociétés. L’équipe participe aussi activement à la mise en œuvre de ces recherches à travers une société qu’elle a mis en place Synectique, qui fait de l’analyse de code. Comme réalisations de l’équipe, nous pouvons citer Pharo, Moose, Roassal, Seaside, Pillar …
+
+
+!!Projet
+Nous avons effectivement effectué notre stage au sein de l’équipe Rmod du 03 avril 2018  au 30 août 2018. Il s’agit d’un stage sur la conception objet axé sur Pillar. Pillar est une chaine de production de documents (web, présentations, livres). Elle permet d’écrire dans un format pivot et de générer plusieurs formats extérieurs. Notre mission a été donc de:
+-stabiliser et modulariser Pillar afin d’en extraire un noyau qui sera utilisé pour commenter les classes en Pharo;
+-définir un framework de configuration;
+-améliorer les aspects de publication de sites web;
+-améliorer les templates de génération d’HTML.
+
+Pillar est un projet démarré en 2006 mené par Damien Cassou, ancien membre de l’équipe RMoD. Le projet avait permis donc d’avoir un outil capable de générer des livres en PDF, en HTML, epub, des présentations, des slides. Il est basé sur Pier qui avait déjà le modèle pour générer des documents dans différents formats. La syntaxe Pillar définie, permettait de définir les titres, de faire la mise en forme, d’inclure des fichiers, … 
+Pillar était alors d’une grande utilité pour la communauté Pharo. L’outil présentait malgré tout quelques points d’amélioration. L’équipe s’est donc mis dans une démarche de refactorisation de Pillar. 
+Ceci afin de le rendre plus stable et ouvert aux extensions. A notre arrivée, Pillar était donc en pleine refonte sur le plan conception avec de nouveaux packages créés pour regrouper les étapes et les points d’extension possibles.
+
+Nous pouvons voir quelques éléments de syntaxe de Pillar à la figure 1. Il est donc possible de mettre des éléments en gras ou de faire des liens externes vers d’autres sites. Lorsqu’on a besoin de mettre du code d’un certain langage dans notre document, c’est également possible.
+Le fait de pouvoir inclure un fichier dans un fichier pillar est d’une grande utilité. Ceci est très souvent utilisé pour permettre à une autre personnes de rédiger un certain chapitre d’un document.
+
