@@ -8,4 +8,8 @@ ${inputFile:path=Chapters/contexte.pillar}$
 
 ${inputFile:path=Chapters/contribution.pillar}$
 
+${inputFile:path=Chapters/conclusion.pillar}$
+
+${inputFile:path=Chapters/bilan.pillar}$
+
 
