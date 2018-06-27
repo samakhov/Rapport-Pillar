@@ -1,0 +1,32 @@
+For the moment, to have the server running, install the pillar version at
+
+[[[
+$ git@github.com:samakhov/pillar.git -b feature/server-command
+]]]
+
+(this branch contains all the commits of original branch with my stuff on serve command)
+
+After the installation, install the ==academic== archetype in your project repository and run the server in local.
+You don't need to change anything to use it in local, 
+Online you will need to change the ==baseurl== in ==pillar.conf== file.
+
+[[[
+$ pillar archetype academic
+
+$ pillar build html
+
+$ pillar serve -w
+
+]]]
+
+The site will be available on ==localhost:8080==
+
+or if you want to change the port 
+
+[[[
+$ pillar serve -p xxxx -w
+]]]
+
+Each pillar file contains a meta description of site owner.
+
+==toc.pillar== contains the hierarchy of menu.

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pharo Book</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+<link href="/Rapport-Pillar/_support/html/css/font-awesome.min.css" rel="stylesheet">
+<link href="/Rapport-Pillar/_support/html/css/nucleus.css" rel="stylesheet">
+<link href="/Rapport-Pillar/_support/html/css/flex.css" rel="stylesheet">
+<link rel="stylesheet" href="/Rapport-Pillar/_support/html/highlightjs/styles/default.css">
+<link rel="stylesheet" href="/Rapport-Pillar/_support/html/css/highlight-commands.css">
+<link rel="stylesheet" href="/Rapport-Pillar/_support/html/css/bootstrap.min.css">
+<script src="/Rapport-Pillar/_support/html/js/jquery-2.x.min.js"></script>
+<script src="/Rapport-Pillar/_support/html/highlightjs/highlight.pack.js"></script>
+<script src="/Rapport-Pillar/_support/html/js/highlight-commands.js"></script>
+<meta name="description" content="">
+<meta name="author" content="Biyalou-Sama Asbathou">
+  </head>
+  <body>
+    <header>
+  <div class="logo">
+    <a class="baselink" href="/Rapport-Pillar">Pharo Book</a>
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+  
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+   		<li data-nav-id="123" class="dd-item">
+    		<a href="/Rapport-Pillar">
+		       <i class="fa fa-fw fa-home"></i>
+	    	</a>
+        </li>
+
+		
+		  <li class="dd-item ">
+			<div>
+			  <a href="/Rapport-Pillar/index.html#introduction">
+					Introduction
+			  </a>
+			  
+			</div>
+			  <ul class="dd-item">
+				
+			  </ul>
+		  
+		  </li>
+		
+		  <li class="dd-item  haschildren ">
+			<div>
+			  <a href="/Rapport-Pillar/Chapters/contexte.html#contexte">
+					Contexte
+			  </a>
+			   <i class="fa fa-angle-right fa-lg category-icon"></i> 
+			</div>
+			  <ul class="dd-item">
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Rapport-Pillar/Chapters/contexte.html#présentation générale">
+							Présentation générale
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Rapport-Pillar/Chapters/contexte.html#centre inria lille - nord europe">
+							Centre Inria Lille - Nord Europe
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Rapport-Pillar/Chapters/contexte.html#equipe-projet rmod">
+							Equipe-projet RMoD
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Rapport-Pillar/Chapters/contexte.html#projet">
+							Projet
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+			  </ul>
+		  
+		  </li>
+		
+		  <li class="dd-item ">
+			<div>
+			  <a href="/Rapport-Pillar/Chapters/contribution.html#contribution">
+					Contribution
+			  </a>
+			  
+			</div>
+			  <ul class="dd-item">
+				
+			  </ul>
+		  
+		  </li>
+		
+		  <li class="dd-item ">
+			<div>
+			  <a href="/Rapport-Pillar/Chapters/conclusion.html#conclusion">
+					Conclusion
+			  </a>
+			  
+			</div>
+			  <ul class="dd-item">
+				
+			  </ul>
+		  
+		  </li>
+		
+		  <li class="dd-item ">
+			<div>
+			  <a href="/Rapport-Pillar/Chapters/bilan.html#bilan">
+					Bilan
+			  </a>
+			  
+			</div>
+			  <ul class="dd-item">
+				
+			  </ul>
+		  
+		  </li>
+		
+    </ul>
+  </aside>
+
+  <section class="page">
+    
+	<h1>Amélioration des processus de génération de documents avec l'outil Pillar</h1>
+		
+	<p>
+For the moment, to have the server running, install the pillar version at
+</p>
+<figure><pre><code>$ git@github.com:samakhov/pillar.git -b feature/server-command</code></pre><figcaption></figcaption></figure>
+
+<p>
+(this branch contains all the commits of original branch with my stuff on serve command)
+</p>
+<p>
+After the installation, install the <code>academic</code> archetype in your project repository and run the server in local.
+You don't need to change anything to use it in local, 
+Online you will need to change the <code>baseurl</code> in <code>pillar.conf</code> file.
+</p>
+<figure><pre><code>$ pillar archetype academic
+
+$ pillar build html
+
+$ pillar serve -w</code></pre><figcaption></figcaption></figure>
+
+<p>
+The site will be available on <code>localhost:8080</code>
+</p>
+<p>
+or if you want to change the port 
+</p>
+<figure><pre><code>$ pillar serve -p xxxx -w</code></pre><figcaption></figcaption></figure>
+
+<p>
+Each pillar file contains a meta description of site owner.
+</p>
+<p>
+<code>toc.pillar</code> contains the hierarchy of menu.
+
+</p>
+
+  </section>
+
+</article>
+
+<footer>
+
+<div class="footline">
+    <div class="github-link">
+      <a href="" target="blank"><i class="fa fa-code-fork"></i>Github</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/Rapport-Pillar/_support/html/js/clipboard.min.js"></script>
+
+<link href="/Rapport-Pillar/_support/html/css/featherlight.min.css" rel="stylesheet">
+<script src="/Rapport-Pillar/_support/html/js/featherlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="/Rapport-Pillar/_support/html/js/flex.js"></script>
+<!-- Prettify annotated paragraphs-->
+    <script src="/Rapport-Pillar_support/html/js/annotated-paragraphs.js"></script>
+
+  </body>
+</html>
