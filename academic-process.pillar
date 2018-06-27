@@ -30,3 +30,48 @@ $ pillar serve -p xxxx -w
 Each pillar file contains a meta description of site owner.
 
 ==toc.pillar== contains the hierarchy of menu.
+
+
+!! Publish It on Github
+
+if you want to host your site on github like ""http://myaccount.github.io/mySite"" you need to set
+a travis file to build and deploy your site.
+
+Just activate travis as a service on your Github repository
+Copy this file in your repository ==.travis.yml==
+
+[[[
+language: smalltalk
+
+
+os:
+    - linux
+
+
+smalltalk:
+    - Pharo-6.1
+
+env:
+  matrix:
+    - JOB=test TYPE=System ARCHETYPE=academic OUTPUT=html
+
+install:
+    # Pillar installation
+    - git clone https://github.com/pillar-markup/pillar.git .pillar -b dev-7  # Clone pillar
+    - cd .pillar && ./scripts/build.sh && cd ..
+
+script:
+    - .pillar/build/pillar build html
+    - cd _result/html && touch .nojekyll && cd ..
+
+deploy:
+   provider: pages
+   skip-cleanup: true
+   github-token: $GH_TOKEN
+   keep-history: true
+   local_dir: _result/html
+   on:
+branch: master
+]]]
+
+After that you will need to generate a token on Github and add it as an environement variable named ==GH_TOKEN== in Travis.
