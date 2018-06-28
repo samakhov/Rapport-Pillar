@@ -75,3 +75,11 @@ branch: master
 ]]]
 
 After that you will need to generate a token on Github and add it as an environement variable named ==GH_TOKEN== in Travis.
+
+!!Bonus : Add token as environement variable in Travis
+
+On your project Settings in Travis, you have a menu labelled ""Environment variables""
+where you can add variables (those variables will be automatically encrypted).
+
++file://settings.png+
+
