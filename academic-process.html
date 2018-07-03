@@ -188,13 +188,21 @@ a GitHub account.
 <p>
 Now we are going to create a repository on GitHub for our website.
 </p>
-<ol><li>In the upper-right corner of any page, click <strong>+</strong>, and then click <strong>New repository</strong> as:</li>
+<ol><li>In the upper-right corner of any page, click <strong>+</strong>, and then click <strong>New repository</strong> as: </li>
+</ol>
+<p>
+<img src="new.png" alt=""/>
+</p><ol><li>Type a name for your repository. For example, &quot;myProject&quot;.</li>
+<li>Optionaly, add a description of your repository like &quot;My personal web site&quot; </li>
+<li>According to informations which will be on your website, you have to chose between &quot;Private&quot; and &quot;Public&quot;</li>
+<li>Select <strong>Initialize this repository with a README</strong>.</li>
+<li>Add .gitignore by selecting Smalltalk as default language.</li>
+<li>Now click <strong>Create repository</strong>.</li>
 </ol>
 
 <p>
-<img src="new.png" alt=""/>
+Your GitHub repository is now created.
 </p>
-
 
 
 <h2>Create your pillar website</h2>
@@ -205,7 +213,7 @@ We will install the <code>academic</code> archetype and then run a local server.
 This should work out of the box in your local machine, however, you will need to change the <code>baseurl</code> setting in the <code>pillar.conf</code> file to correctly render in github pages.
 </p>
 <figure><pre><code># On a new terminal, so the new bashrc settings are taken
-$ mkdir mysite &amp;&amp; cd mysite
+$ git clone https://github.com/myAccount/myProject &amp;&amp; cd myProject
 $ pillar archetype academic
 $ pillar build html
 $ pillar serve -w &amp;</code></pre><figcaption></figcaption></figure>

@@ -25,10 +25,16 @@ a GitHub account.
 
 Now we are going to create a repository on GitHub for our website.
 
-# In the upper-right corner of any page, click ""+"", and then click ""New repository"" as:
-
+# In the upper-right corner of any page, click ""+"", and then click ""New repository"" as: 
 +file://new.png+
+# Type a name for your repository. For example, "myProject".
+# Optionaly, add a description of your repository like "My personal web site" 
+# According to informations which will be on your website, you have to chose between "Private" and "Public"
+# Select ""Initialize this repository with a README"".
+# Add .gitignore by selecting Smalltalk as default language.
+# Now click ""Create repository"".
 
+Your GitHub repository is now created.
 
 
 
@@ -40,7 +46,7 @@ This should work out of the box in your local machine, however, you will need to
 
 [[[
 # On a new terminal, so the new bashrc settings are taken
-$ mkdir mysite && cd mysite
+$ git clone https://github.com/myAccount/myProject && cd myProject
 $ pillar archetype academic
 $ pillar build html
 $ pillar serve -w &
