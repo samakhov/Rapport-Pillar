@@ -1,59 +1,75 @@
-For the moment, to have the server running, install the pillar version at
+This tutorial shows how to put into place a personal website using pillar, and automatically deploy it using github pages and travis.
 
-[[[
-$ git@github.com:samakhov/pillar.git -b feature/server-command
+!! Setting up the environment
+
+This tutorial requires the development version of pillar that can be found in the ==feature/server-command== branch.
+To install this version, you will need to clone pillar, check out that branch and then proceed with a normal pillar installation, as follows:
+
+[[[language=bash
+# Clone and build pillar
+$ git clone git@github.com:samakhov/pillar.git -b feature/server-command
+$ cd pillar
+$ ./scripts/build.sh
+
+# install pillar in your home and update your bashrc
+$ mv build ~/.pillar
+$ echo 'export PATH="$PATH:~/.pillar"' >> ~/.bashrc 
 ]]]
 
-(this branch contains all the commits of original branch with my stuff on serve command)
+!! Setup your GitHub repository
 
-After the installation, install the ==academic== archetype in your project repository and run the server in local.
-You don't need to change anything to use it in local, 
-Online you will need to change the ==baseurl== in ==pillar.conf== file.
+comment faire push de ton truc
+
+!! Create your pillar website
+
+After the installation, we can proceed to create a new site in a fresh directory.
+We will install the ==academic== archetype and then run a local server.
+This should work out of the box in your local machine, however, you will need to change the ==baseurl== setting in the ==pillar.conf== file to correctly render in github pages.
 
 [[[
+# On a new terminal, so the new bashrc settings are taken
+$ mkdir mysite && cd mysite
 $ pillar archetype academic
-
 $ pillar build html
-
-$ pillar serve -w
-
+$ pillar serve -w &
 ]]]
 
-The site will be available on ==localhost:8080==
-
-or if you want to change the port 
+Then we will have a skelon site available on ==localhost:8080==.
+If you want to change the port, you can use the ==-p== parameter as in: 
 
 [[[
-$ pillar serve -p xxxx -w
+$ pillar serve -p xxxx -w &
 ]]]
 
-Each pillar file contains a meta description of site owner.
+Put a screenshot of the raw website.
+
+!! Editing your site
+
+Put an example of how to change the contents, link to the pillar syntax, maybe put a screenshot with your final result
 
 ==toc.pillar== contains the hierarchy of menu.
 
 
-!! Publish It on Github
+!! Publish It on GitHub pages
 
-if you want to host your site on github like ""http://myaccount.github.io/mySite"" you need to set
-a travis file to build and deploy your site.
+If you want to host your site on GitHub, GitHub provides a free subdomain for their users.
+So if you already have a GitHub account named ==myAccount== you can have a site for your project ==myProject== into ""http://myAccount.github.io/myProject"".
+We can already generate our pillar website automatically by calling pillar, and we can now also deploy our website in GitHub pages using travis.
+Travis is a continuous integration service that will execute several scripts every time a new commit/branch/pull request is pushed into our repository.
+This way, on every commit we can build our site and push our html to our website.
 
-Just activate travis as a service on your Github repository
-Copy this file in your repository ==.travis.yml==
+To use travis we need to
+# activate travis as a service on your Github repository (maybe put a screenshot or link)
+# Create a ==.travis.yml== file in the root of your site with the following content
 
 [[[
 language: smalltalk
 
-
 os:
     - linux
 
-
 smalltalk:
     - Pharo-6.1
-
-env:
-  matrix:
-    - JOB=test TYPE=System ARCHETYPE=academic OUTPUT=html
 
 install:
     # Pillar installation
@@ -74,12 +90,8 @@ deploy:
 branch: master
 ]]]
 
-After that you will need to generate a token on Github and add it as an environement variable named ==GH_TOKEN== in Travis.
-
-!!Bonus : Add token as environement variable in Travis
-
-On your project Settings in Travis, you have a menu labelled ""Environment variables""
+# Generate a token on Github and add it as an environement variable named ==GH_TOKEN== in Travis (screenshot or link)
+For example, on your project Settings in Travis, you have a menu labelled ""Environment variables""
 where you can add variables (those variables will be automatically encrypted).
 
 +file://settings.png+
-
