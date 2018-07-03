@@ -143,7 +143,9 @@ Travis is a continuous integration service that will execute several scripts eve
 This way, on every commit we can build our site and push our html to our website.
 
 To use travis we need to
-# activate travis as a service on your Github repository (maybe put a screenshot or link)
+# Activate travis as a service on your Github repository :
++file://travis.png+
+
 # Create a ==.travis.yml== file in the root of your site with the following content
 
 [[[
@@ -174,8 +176,12 @@ deploy:
 branch: master
 ]]]
 
-# Generate a token on Github and add it as an environement variable named ==GH_TOKEN== in Travis (screenshot or link)
-For example, on your project Settings in Travis, you have a menu labelled ""Environment variables""
+# Generate a token on Github and add it as an environement variable named ==GH_TOKEN== in Travis
+
++file://travis_settings.png+
+
+
+On your project Settings in Travis, you have a menu labelled ""Environment variables""
 where you can add variables (those variables will be automatically encrypted).
 
 +file://settings.png+

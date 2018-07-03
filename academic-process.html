@@ -311,8 +311,12 @@ This way, on every commit we can build our site and push our html to our website
 </p>
 <p>
 To use travis we need to
-</p><ol><li>activate travis as a service on your Github repository (maybe put a screenshot or link)</li>
-<li>Create a <code>.travis.yml</code> file in the root of your site with the following content</li>
+</p><ol><li>Activate travis as a service on your Github repository :</li>
+</ol>
+<p>
+<img src="travis.png" alt=""/>
+</p>
+<ol><li>Create a <code>.travis.yml</code> file in the root of your site with the following content</li>
 </ol>
 
 <figure><pre><code>language: smalltalk
@@ -341,10 +345,15 @@ deploy:
    on:
 branch: master</code></pre><figcaption></figcaption></figure>
 
-<ol><li>Generate a token on Github and add it as an environement variable named <code>GH_TOKEN</code> in Travis (screenshot or link)</li>
+<ol><li>Generate a token on Github and add it as an environement variable named <code>GH_TOKEN</code> in Travis</li>
 </ol>
+
 <p>
-For example, on your project Settings in Travis, you have a menu labelled <strong>Environment variables</strong>
+<img src="travis_settings.png" alt=""/>
+</p>
+
+<p>
+On your project Settings in Travis, you have a menu labelled <strong>Environment variables</strong>
 where you can add variables (those variables will be automatically encrypted).
 </p>
 <p>
