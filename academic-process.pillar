@@ -16,9 +16,21 @@ $ mv build ~/.pillar
 $ echo 'export PATH="$PATH:~/.pillar"' >> ~/.bashrc 
 ]]]
 
+
+For the following sections, we need to have a GitHub account. So check *here>https://services.github.com/on-demand/intro-to-github/create-github-account* if you do not have
+a GitHub account.
+
+
 !! Setup your GitHub repository
 
-comment faire push de ton truc
+Now we are going to create a repository on GitHub for our website.
+
+# In the upper-right corner of any page, click ""+"", and then click ""New repository"" as:
+
++file://new.png+
+
+
+
 
 !! Create your pillar website
 
