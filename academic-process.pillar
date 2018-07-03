@@ -96,9 +96,9 @@ Create ==teaching.pillar== file at the root of your project directory with conte
 
 [[[
 
-!!Teaching
+!Teaching
 
-!!!Teaching at Polytech'Lille
+!!Teaching at Polytech'Lille
 -Test and Maintenance Course - GIS 5th year since 2014-2015 and GIS 5 since 2016-2017
 -Subject Programming Course (Java) - GIS 4th year apprenticeship since 2014-2015
 -Advanced Database Course - GIS 4th year since 2009-2010
@@ -107,7 +107,7 @@ Create ==teaching.pillar== file at the root of your project directory with conte
 -Internship Manager - GIS 4th from 2009-2010 to 2012-2013
 -""In charge of end of study projects - GIS 5th"" since 2014-2015
 
-!!!Teaching at Paris 1 University
+!!Teaching at Paris 1 University
 -TD UML (Class, Activity, State, Context, Use Case and Sequence Diagrams), HTML and XML
 -TD Introduction to Databases
 -Occasional course Initiation to Php and MySQL
@@ -126,12 +126,16 @@ ${inputFile:path=index.pillar}$
 ${inputFile:path=projects.pillar}$
 ${inputFile:path=research.pillar}$
 ${inputFile:path=publications.pillar}$
-${inputFile:path=coordinates.pillar}$
 ${inputFile:path=teaching.pillar}$
+${inputFile:path=coordinates.pillar}$
 
 ]]]
 
 We can notice that ==toc.pillar== is the file used to declare different menus.
+
+Now you should get a page like that:
+
++file://teach.png+
 
 
 !! Publish It on GitHub pages
@@ -176,7 +180,7 @@ deploy:
 branch: master
 ]]]
 
-# Generate a token on Github and add it as an environement variable named ==GH_TOKEN== in Travis
+- Generate a token on Github and add it as an environement variable named ==GH_TOKEN== in Travis
 
 +file://travis_settings.png+
 
