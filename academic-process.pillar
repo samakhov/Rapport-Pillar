@@ -59,13 +59,79 @@ If you want to change the port, you can use the ==-p== parameter as in:
 $ pillar serve -p xxxx -w &
 ]]]
 
-Put a screenshot of the raw website.
+After these steps, you will get a default website as: 
++file://default.png+
 
 !! Editing your site
 
-Put an example of how to change the contents, link to the pillar syntax, maybe put a screenshot with your final result
+-We are going fisrt to customize your profile in ==pillar.conf== file.
 
-==toc.pillar== contains the hierarchy of menu.
+[[[
+
+   "baseurl" : "",
+   "profile" : [
+		{
+			"name": "John Doe",
+	 		"avatar": "avatar.png",
+     			"post": "Research Engineer",
+     			"firm": "Space Laboratory"
+		}
+	],
+
+#'Basic website meta-data. Used by the different templates to fill-out information and page metas': #comment,
+   "site_name": "Personal's Stuff",
+
+]]]
+
+That is the default profile of academic archetype. So, you can set your name, choose an avatar, your post, ...
+
+
+-For the naviguation bar of the site, it is managed by a ==toc.pillar== file located at the root of the repository.
+
+Let's create a new page and it as menu to the navbar.
+
+We can choose to manage ""Teaching"" activities of a research professor.
+
+Create ==teaching.pillar== file at the root of your project directory with contents:
+
+[[[
+
+!!Teaching
+
+!!!Teaching at Polytech'Lille
+-Test and Maintenance Course - GIS 5th year since 2014-2015 and GIS 5 since 2016-2017
+-Subject Programming Course (Java) - GIS 4th year apprenticeship since 2014-2015
+-Advanced Database Course - GIS 4th year since 2009-2010
+-Data Structures Course - GIS 3rd year 2007-2008 to 2009-2010
+-Software Engineering Course - GIS 5th year from 2008-2009 to 2012-2013
+-Internship Manager - GIS 4th from 2009-2010 to 2012-2013
+-""In charge of end of study projects - GIS 5th"" since 2014-2015
+
+!!!Teaching at Paris 1 University
+-TD UML (Class, Activity, State, Context, Use Case and Sequence Diagrams), HTML and XML
+-TD Introduction to Databases
+-Occasional course Initiation to Php and MySQL
+-TD Course Modeling Events in REMORA
+-Occasional course Integrity constraints in the relational models
+
+
+]]]
+
+After this we have to add a new entry in ==toc.pillar==. This will allow us to have ""Teaching"" as
+a new menu in the naviguation bar.
+
+[[[
+
+${inputFile:path=index.pillar}$
+${inputFile:path=projects.pillar}$
+${inputFile:path=research.pillar}$
+${inputFile:path=publications.pillar}$
+${inputFile:path=coordinates.pillar}$
+${inputFile:path=teaching.pillar}$
+
+]]]
+
+We can notice that ==toc.pillar== is the file used to declare different menus.
 
 
 !! Publish It on GitHub pages

@@ -225,15 +225,79 @@ If you want to change the port, you can use the <code>-p</code> parameter as in:
 <figure><pre><code>$ pillar serve -p xxxx -w &amp;</code></pre><figcaption></figcaption></figure>
 
 <p>
-Put a screenshot of the raw website.
+After these steps, you will get a default website as: 
+<img src="default.png" alt=""/>
 </p>
 <h2>Editing your site</h2>
 
+<ul>
+<li>We are going fisrt to customize your profile in <code>pillar.conf</code> file.</li>
+</ul>
+
+<figure><pre><code>
+   &quot;baseurl&quot; : &quot;&quot;,
+   &quot;profile&quot; : [
+		{
+			&quot;name&quot;: &quot;John Doe&quot;,
+	 		&quot;avatar&quot;: &quot;avatar.png&quot;,
+     			&quot;post&quot;: &quot;Research Engineer&quot;,
+     			&quot;firm&quot;: &quot;Space Laboratory&quot;
+		}
+	],
+
+#'Basic website meta-data. Used by the different templates to fill-out information and page metas': #comment,
+   &quot;site_name&quot;: &quot;Personal's Stuff&quot;,</code></pre><figcaption></figcaption></figure>
+
 <p>
-Put an example of how to change the contents, link to the pillar syntax, maybe put a screenshot with your final result
+That is the default profile of academic archetype. So, you can set your name, choose an avatar, your post, ...
+</p>
+
+<ul>
+<li>For the naviguation bar of the site, it is managed by a <code>toc.pillar</code> file located at the root of the repository.</li>
+</ul>
+
+<p>
+Let's create a new page and it as menu to the navbar.
 </p>
 <p>
-<code>toc.pillar</code> contains the hierarchy of menu.
+We can choose to manage <strong>Teaching</strong> activities of a research professor.
+</p>
+<p>
+Create <code>teaching.pillar</code> file at the root of your project directory with contents:
+</p>
+<figure><pre><code>
+!!Teaching
+
+!!!Teaching at Polytech'Lille
+-Test and Maintenance Course - GIS 5th year since 2014-2015 and GIS 5 since 2016-2017
+-Subject Programming Course (Java) - GIS 4th year apprenticeship since 2014-2015
+-Advanced Database Course - GIS 4th year since 2009-2010
+-Data Structures Course - GIS 3rd year 2007-2008 to 2009-2010
+-Software Engineering Course - GIS 5th year from 2008-2009 to 2012-2013
+-Internship Manager - GIS 4th from 2009-2010 to 2012-2013
+-&quot;&quot;In charge of end of study projects - GIS 5th&quot;&quot; since 2014-2015
+
+!!!Teaching at Paris 1 University
+-TD UML (Class, Activity, State, Context, Use Case and Sequence Diagrams), HTML and XML
+-TD Introduction to Databases
+-Occasional course Initiation to Php and MySQL
+-TD Course Modeling Events in REMORA
+-Occasional course Integrity constraints in the relational models</code></pre><figcaption></figcaption></figure>
+
+<p>
+After this we have to add a new entry in <code>toc.pillar</code>. This will allow us to have <strong>Teaching</strong> as
+a new menu in the naviguation bar.
+</p>
+<figure><pre><code>
+${inputFile:path=index.pillar}$
+${inputFile:path=projects.pillar}$
+${inputFile:path=research.pillar}$
+${inputFile:path=publications.pillar}$
+${inputFile:path=coordinates.pillar}$
+${inputFile:path=teaching.pillar}$</code></pre><figcaption></figcaption></figure>
+
+<p>
+We can notice that <code>toc.pillar</code> is the file used to declare different menus.
 </p>
 
 <h2>Publish It on GitHub pages</h2>
