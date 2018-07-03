@@ -17,7 +17,7 @@ $ echo 'export PATH="$PATH:~/.pillar"' >> ~/.bashrc
 ]]]
 
 
-For the following sections, we need to have a GitHub account. So check *here>https://services.github.com/on-demand/intro-to-github/create-github-account* if you do not have
+@@note For the following sections, we need to have a GitHub account. So check *here>https://services.github.com/on-demand/intro-to-github/create-github-account* if you do not have
 a GitHub account.
 
 
