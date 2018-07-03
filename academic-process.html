@@ -160,62 +160,81 @@
 	<h1>Amélioration des processus de génération de documents avec l'outil Pillar</h1>
 		
 	<p>
-For the moment, to have the server running, install the pillar version at
+This tutorial shows how to put into place a personal website using pillar, and automatically deploy it using github pages and travis.
 </p>
-<figure><pre><code>$ git@github.com:samakhov/pillar.git -b feature/server-command</code></pre><figcaption></figcaption></figure>
+<h2>Setting up the environment</h2>
 
 <p>
-(this branch contains all the commits of original branch with my stuff on serve command)
+This tutorial requires the development version of pillar that can be found in the <code>feature/server-command</code> branch.
+To install this version, you will need to clone pillar, check out that branch and then proceed with a normal pillar installation, as follows:
 </p>
-<p>
-After the installation, install the <code>academic</code> archetype in your project repository and run the server in local.
-You don't need to change anything to use it in local, 
-Online you will need to change the <code>baseurl</code> in <code>pillar.conf</code> file.
-</p>
-<figure><pre><code>$ pillar archetype academic
+<figure><pre><code class="bash"># Clone and build pillar
+$ git clone git@github.com:samakhov/pillar.git -b feature/server-command
+$ cd pillar
+$ ./scripts/build.sh
 
+# install pillar in your home and update your bashrc
+$ mv build ~/.pillar
+$ echo 'export PATH=&quot;$PATH:~/.pillar&quot;' &gt;&gt; ~/.bashrc </code></pre><figcaption></figcaption></figure>
+
+<h2>Setup your GitHub repository</h2>
+
+<p>
+comment faire push de ton truc
+</p>
+<h2>Create your pillar website</h2>
+
+<p>
+After the installation, we can proceed to create a new site in a fresh directory.
+We will install the <code>academic</code> archetype and then run a local server.
+This should work out of the box in your local machine, however, you will need to change the <code>baseurl</code> setting in the <code>pillar.conf</code> file to correctly render in github pages.
+</p>
+<figure><pre><code># On a new terminal, so the new bashrc settings are taken
+$ mkdir mysite &amp;&amp; cd mysite
+$ pillar archetype academic
 $ pillar build html
-
-$ pillar serve -w</code></pre><figcaption></figcaption></figure>
+$ pillar serve -w &amp;</code></pre><figcaption></figcaption></figure>
 
 <p>
-The site will be available on <code>localhost:8080</code>
+Then we will have a skelon site available on <code>localhost:8080</code>.
+If you want to change the port, you can use the <code>-p</code> parameter as in: 
 </p>
-<p>
-or if you want to change the port 
-</p>
-<figure><pre><code>$ pillar serve -p xxxx -w</code></pre><figcaption></figcaption></figure>
+<figure><pre><code>$ pillar serve -p xxxx -w &amp;</code></pre><figcaption></figcaption></figure>
 
 <p>
-Each pillar file contains a meta description of site owner.
+Put a screenshot of the raw website.
+</p>
+<h2>Editing your site</h2>
+
+<p>
+Put an example of how to change the contents, link to the pillar syntax, maybe put a screenshot with your final result
 </p>
 <p>
 <code>toc.pillar</code> contains the hierarchy of menu.
 </p>
 
-<h2>Publish It on Github</h2>
+<h2>Publish It on GitHub pages</h2>
 
 <p>
-if you want to host your site on github like <strong>http://myaccount.github.io/mySite</strong> you need to set
-a travis file to build and deploy your site.
+If you want to host your site on GitHub, GitHub provides a free subdomain for their users.
+So if you already have a GitHub account named <code>myAccount</code> you can have a site for your project <code>myProject</code> into <strong>http://myAccount.github.io/myProject</strong>.
+We can already generate our pillar website automatically by calling pillar, and we can now also deploy our website in GitHub pages using travis.
+Travis is a continuous integration service that will execute several scripts every time a new commit/branch/pull request is pushed into our repository.
+This way, on every commit we can build our site and push our html to our website.
 </p>
 <p>
-Just activate travis as a service on your Github repository
-Copy this file in your repository <code>.travis.yml</code>
-</p>
+To use travis we need to
+</p><ol><li>activate travis as a service on your Github repository (maybe put a screenshot or link)</li>
+<li>Create a <code>.travis.yml</code> file in the root of your site with the following content</li>
+</ol>
+
 <figure><pre><code>language: smalltalk
-
 
 os:
     - linux
 
-
 smalltalk:
     - Pharo-6.1
-
-env:
-  matrix:
-    - JOB=test TYPE=System ARCHETYPE=academic OUTPUT=html
 
 install:
     # Pillar installation
@@ -235,19 +254,16 @@ deploy:
    on:
 branch: master</code></pre><figcaption></figcaption></figure>
 
+<ol><li>Generate a token on Github and add it as an environement variable named <code>GH_TOKEN</code> in Travis (screenshot or link)</li>
+</ol>
 <p>
-After that you will need to generate a token on Github and add it as an environement variable named <code>GH_TOKEN</code> in Travis.
-</p>
-<h2>Bonus : Add token as environement variable in Travis</h2>
-
-<p>
-On your project Settings in Travis, you have a menu labelled <strong>Environment variables</strong>
+For example, on your project Settings in Travis, you have a menu labelled <strong>Environment variables</strong>
 where you can add variables (those variables will be automatically encrypted).
 </p>
 <p>
 <img src="settings.png" alt=""/>
-</p>
 
+</p>
 
   </section>
 
