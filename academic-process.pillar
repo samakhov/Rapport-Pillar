@@ -189,3 +189,14 @@ On your project Settings in Travis, you have a menu labelled ""Environment varia
 where you can add variables (those variables will be automatically encrypted).
 
 +file://settings.png+
+
+
+
+After all of that, you can commit your changes to GitHub and wait for your website on:
+""https://myAccount.github.io/myProject""
+
+[[[language=bash
+$ git add .
+$ git commit -m "First commit"
+$ git push origin master
+]]]
