@@ -295,7 +295,8 @@ We will install the <code>academic</code> archetype and then run a local server.
 This should work out of the box in your local machine, however, you will need to change the <code>baseurl</code> setting in the <code>pillar.conf</code> file to correctly render in github pages.
 </p>
 <figure><pre><code># On a new terminal, so the new bashrc settings are taken
-$ git clone https://github.com/myAccount/myProject &amp;&amp; cd myProject
+$ git clone https://github.com/myAccount/myAccount &amp;&amp; cd myAccount
+#Or git clone https://github.com/myAccount/myProject &amp;&amp; cd myProject
 $ pillar archetype academic
 $ pillar build html
 $ pillar serve -w &amp;</code></pre><figcaption></figcaption></figure>
@@ -338,6 +339,20 @@ That is the default profile of academic archetype. So, you can set your name, ch
 <li>For the naviguation bar of the site, it is managed by a <code>toc.pillar</code> file located at the root of the repository.</li>
 </ul>
 
+<figure><pre><code>
+${inputFile:path=index.pillar}$
+${inputFile:path=projects.pillar}$
+${inputFile:path=research.pillar}$
+${inputFile:path=publications.pillar}$
+${inputFile:path=coordinates.pillar}$</code></pre><figcaption></figcaption></figure>
+<p>
+Default content of toc file.
+</p>
+<p>
+This only used to specify all files of your project with a <strong>heading 1</strong> level title.
+The <code>toc.html</code> is not necessary.
+</p>
+
 <p>
 Let's create a new page and it as menu to the navbar.
 </p>
@@ -371,12 +386,7 @@ After this we have to add a new entry in <code>toc.pillar</code>. This will allo
 a new menu in the naviguation bar.
 </p>
 <figure><pre><code>
-${inputFile:path=index.pillar}$
-${inputFile:path=projects.pillar}$
-${inputFile:path=research.pillar}$
-${inputFile:path=publications.pillar}$
-${inputFile:path=teaching.pillar}$
-${inputFile:path=coordinates.pillar}$</code></pre><figcaption></figcaption></figure>
+${inputFile:path=teaching.pillar}$</code></pre><figcaption></figcaption></figure>
 
 <p>
 We can notice that <code>toc.pillar</code> is the file used to declare different menus.
@@ -387,6 +397,7 @@ Now you should get a page like that:
 <p>
 <img src="teach.png" alt=""/>
 </p>
+<p class="note">We have not cover all the syntax of Pillar here. So for more, you can click <a href="https://samakhov.github.io/Booklet-PublishingAPillarBooklet/Chapters/CheatSheet.html#pillar%20cheatsheet">here</a></p>
 
 <h2>Publish It on GitHub pages</h2>
 
