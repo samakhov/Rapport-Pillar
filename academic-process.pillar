@@ -58,7 +58,8 @@ This should work out of the box in your local machine, however, you will need to
 
 [[[
 # On a new terminal, so the new bashrc settings are taken
-$ git clone https://github.com/myAccount/myProject && cd myProject
+$ git clone https://github.com/myAccount/myAccount && cd myAccount
+#Or git clone https://github.com/myAccount/myProject && cd myProject
 $ pillar archetype academic
 $ pillar build html
 $ pillar serve -w &
@@ -100,6 +101,21 @@ That is the default profile of academic archetype. So, you can set your name, ch
 
 -For the naviguation bar of the site, it is managed by a ==toc.pillar== file located at the root of the repository.
 
+[[[
+
+${inputFile:path=index.pillar}$
+${inputFile:path=projects.pillar}$
+${inputFile:path=research.pillar}$
+${inputFile:path=publications.pillar}$
+${inputFile:path=coordinates.pillar}$
+
+]]]
+Default content of toc file.
+
+This only used to specify all files of your project with a ""heading 1"" level title.
+The ==toc.html== is not necessary.
+
+
 Let's create a new page and it as menu to the navbar.
 
 We can choose to manage ""Teaching"" activities of a research professor.
@@ -134,12 +150,7 @@ a new menu in the naviguation bar.
 
 [[[
 
-${inputFile:path=index.pillar}$
-${inputFile:path=projects.pillar}$
-${inputFile:path=research.pillar}$
-${inputFile:path=publications.pillar}$
 ${inputFile:path=teaching.pillar}$
-${inputFile:path=coordinates.pillar}$
 
 ]]]
 
@@ -148,6 +159,8 @@ We can notice that ==toc.pillar== is the file used to declare different menus.
 Now you should get a page like that:
 
 +file://teach.png+
+
+@@note We have not cover all the syntax of Pillar here. So for more, you can click *here>https://samakhov.github.io/Booklet-PublishingAPillarBooklet/Chapters/CheatSheet.html#pillar%20cheatsheet*
 
 
 !! Publish It on GitHub pages
