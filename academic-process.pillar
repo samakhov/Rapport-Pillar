@@ -171,6 +171,13 @@ We can already generate our pillar website automatically by calling pillar, and 
 Travis is a continuous integration service that will execute several scripts every time a new commit/branch/pull request is pushed into our repository.
 This way, on every commit we can build our site and push our html to our website.
 
+!!!Let's explain two different cases and how to proceed 
+
+As for creating our GitHub repository, we are going to consider the two different cases.
+
+!!! For a personal website as myAccount.github.io
+
+
 To use travis we need to
 # Activate travis as a service on your Github repository :
 +file://travis.png+
@@ -202,7 +209,7 @@ deploy:
    keep-history: true
    local_dir: _result/html
    on:
-branch: master
+     branch: master
 ]]]
 
 - Generate a token on Github and add it as an environement variable named ==GH_TOKEN== in Travis
